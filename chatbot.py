@@ -1,6 +1,9 @@
 # app.py
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 import hashlib 
 from gtts import gTTS
 from langdetect import detect
@@ -238,7 +241,7 @@ with st.sidebar:
 # =========================
 # GROQ API KEY
 # =========================
-api_key = "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"
+api_key = os.getenv("GROQ_API_KEY")
 
 # Initialize the Groq client with your key
 client = Groq(api_key=api_key)
